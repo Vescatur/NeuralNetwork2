@@ -44,24 +44,25 @@ public final class  GameManager {
             }
         }
         if(printing) {
-            for (int Category = 0; Category < 4; Category++) {
-                for (int Variable = 0; Variable <= 10; Variable++) {
-                    if (Category == 0) {
-                        System.out.print("hand1");
-                    } else if (Category == 1) {
-                        System.out.print("hand2");
-                    } else if (Category == 2) {
-                        System.out.print("rand1");
-                    } else if (Category == 3) {
-                        System.out.print("rand2");
-                    }
-                    System.out.print(" ");
-                    System.out.print(Variable);
-                    System.out.print(" ");
+//            for (int Category = 0; Category < 4; Category++) {
+//                for (int Variable = 0; Variable <= 10; Variable++) {
+//                    if (Category == 0) {
+//                        System.out.print("hand1");
+//                    } else if (Category == 1) {
+//                        System.out.print("hand2");
+//                    } else if (Category == 2) {
+//                        System.out.print("rand1");
+//                    } else if (Category == 3) {
+//                        System.out.print("rand2");
+//                    }
+//                    System.out.print(" ");
+//                    System.out.print(Variable);
+//                    System.out.print(" ");
+//
+//                    System.out.println(scoreBijCategory[Category][Variable]);
+//                }
+//            }
 
-                    System.out.println(scoreBijCategory[Category][Variable]);
-                }
-            }
             printTable(scorePerHand1Hand2);
         }
         return score;

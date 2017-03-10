@@ -5,8 +5,26 @@ package nl.edmi.NeuralNetwork;
  */
 public class MarkovChainManager {
 
-    public static double[][] CalculateTransitionMatrix(ICell cells){
-        return null;
+    public static double[][] CalculateTransitionMatrix(ICell[] cells){
+        double[][] TransitionMatrix = new double[cells.length][cells.length];
+        for(int a = 0;a<cells.length;a++){
+            for(int b = 0;b<cells.length;b++) {
+                if(a>b){
+                    System.out.print(a);
+                    System.out.print(" ");
+                    System.out.println(b);
+                    double FightScore = GameManager.RoundTwoCells(cells[a],cells[b],false);
+
+                    if(FightScore >0){
+                        TransitionMatrix[b][a] = FightScore;
+                    }else{
+                        TransitionMatrix[a][b] = -FightScore;
+                    }
+                }
+            }
+        }
+
+        return TransitionMatrix;
     }
 
 
