@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by Ivan on 25-12-2016.
  */
-public final class GameManager {
+public final class  GameManager {
 
     private GameManager() {
 

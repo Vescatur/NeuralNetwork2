@@ -20,9 +20,9 @@ public class ProgrammedCell1 implements ICell{
         }else if(random==0.3) {
             return new BetAnswer(0.1);
         }else if(random==0.4) {
-            return new BetAnswer(0.2);
+            return new BetAnswer(1);
         }else if(random==0.5) {
-            return new BetAnswer(0.2);
+            return new BetAnswer(1);
         }else if(random==0.6) {
             return new BetAnswer(0.2);
         }else if(random==0.7) {
@@ -48,7 +48,7 @@ public class ProgrammedCell1 implements ICell{
         }else if(random==0.3) {
             return new BetAnswer(0.1);
         }else if(random==0.4) {
-            return new BetAnswer(0.2);
+            return new BetAnswer(1);
         }else if(random==0.5) {
             return new BetAnswer(0.2);
         }else if(random==0.6) {
@@ -76,7 +76,7 @@ public class ProgrammedCell1 implements ICell{
         }else if(random==0.3) {
             return new BetAnswer(0);
         }else if(random==0.4) {
-            return new BetAnswer(0.2);
+            return new BetAnswer(1);
         }else if(random==0.5) {
             return new BetAnswer(0.2);
         }else if(random==0.6) {
