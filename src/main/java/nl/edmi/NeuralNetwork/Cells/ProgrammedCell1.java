@@ -92,4 +92,9 @@ public class ProgrammedCell1 implements ICell{
         }
         return new BetAnswer(0.2);
     }
+
+    @Override
+    public ICell Clone() {
+        return new ProgrammedCell1();
+    }
 }

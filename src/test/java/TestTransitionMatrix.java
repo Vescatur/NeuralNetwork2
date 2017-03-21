@@ -14,6 +14,6 @@ public class TestTransitionMatrix {
     @Test
     public void Test1(){
         ICell[] cells = {new ProgrammedCell5(),new ProgrammedCell6(),new ProgrammedCell7()};
-        GameManager.printTable(MarkovChainManager.CalculateTransitionMatrix(cells));
+        GameManager.printTable(MarkovChainManager.CalculateTransitionMatrix(cells),3);
     }
 }

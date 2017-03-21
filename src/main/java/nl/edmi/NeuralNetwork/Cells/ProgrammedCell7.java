@@ -25,4 +25,8 @@ public class ProgrammedCell7 implements ICell{
     public BetAnswer ThirdMove(double random, double hand, double inzet, double verlies) {
         return new BetAnswer(0.5);
     }
+    @Override
+    public ICell Clone() {
+        return new ProgrammedCell7();
+    }
 }

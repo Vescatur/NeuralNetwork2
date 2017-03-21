@@ -10,23 +10,30 @@ public class MarkovChainManager {
         for(int a = 0;a<cells.length;a++){
             for(int b = 0;b<cells.length;b++) {
                 if(a>b){
-                    System.out.print(a);
-                    System.out.print(" ");
-                    System.out.println(b);
                     double FightScore = GameManager.RoundTwoCells(cells[a],cells[b],false);
-
+                    double maxPerRound = 292820;
+                    double maxEarning = 292820*(cells.length-1);
                     if(FightScore >0){
-                        TransitionMatrix[b][a] = FightScore;
+                        TransitionMatrix[b][a] = FightScore/maxEarning;
+                        TransitionMatrix[b][b] += (maxPerRound-FightScore)/maxEarning;
+                        TransitionMatrix[a][a] += maxPerRound/maxEarning;
                     }else{
-                        TransitionMatrix[a][b] = -FightScore;
+                        TransitionMatrix[a][b] = (-FightScore)/maxEarning;
+                        TransitionMatrix[a][a] += (maxPerRound+FightScore)/maxEarning;
+                        TransitionMatrix[b][b] += maxPerRound/maxEarning;
                     }
                 }
             }
         }
 
+
         return TransitionMatrix;
     }
 
+    public static double[] CalculateStableDistribution(ICell[] cells) {
+        double[][] TransitionMatrix = CalculateTransitionMatrix( cells);
+        return CalculateStableDistribution(TransitionMatrix);
+    }
 
 
     public static double[] CalculateStableDistribution(double[][] TransitionMatrix){
@@ -34,7 +41,6 @@ public class MarkovChainManager {
         for(int i = 0; i<oldDistribution.length;i++) {
             oldDistribution[i] = 1.0/oldDistribution.length;
         }
-        printTable(oldDistribution);
 
         for(int i =0;i<100;i++){
             double[] newDistribution = new double[TransitionMatrix.length];
@@ -44,7 +50,6 @@ public class MarkovChainManager {
                 }
             }
             oldDistribution = newDistribution;
-            printTable(oldDistribution);
         }
         return oldDistribution;
     }

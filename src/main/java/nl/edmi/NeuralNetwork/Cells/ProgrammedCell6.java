@@ -32,4 +32,8 @@ public class ProgrammedCell6 implements ICell{
             }
         }
     }
+    @Override
+    public ICell Clone() {
+        return new ProgrammedCell6();
+    }
 }

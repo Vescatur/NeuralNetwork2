@@ -39,7 +39,7 @@ public class TestStableDistribution {
         };
 
         double[] stableDistribution = {0.202267712,	0.143824671,	0.252263907,	0.401643711};
-        Assert.assertArrayEquals(stableDistribution, MarkovChainManager.CalculateStableDistribution(transitionMatrix),0.000000001);
+        Assert.assertArrayEquals(stableDistribution, MarkovChainManager.CalculateStableDistribution(transitionMatrix),0.000001);
     }
 
 

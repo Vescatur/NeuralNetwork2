@@ -63,7 +63,7 @@ public final class  GameManager {
 //                }
 //            }
 
-            printTable(scorePerHand1Hand2);
+            printTable(scorePerHand1Hand2,4);
         }
         return score;
     }
@@ -138,10 +138,26 @@ public final class  GameManager {
         }
     }
 
-    public static void printTable(double[][] twoDm){
+    public static double CalculateScore(ICell Cell,ArrayList<ICell> baseCells, double[] StableDistribution){
+        double score = 0;
+        for(int i = 0;i<baseCells.size();i++){
+            double scoreFight = RoundTwoCells(Cell,baseCells.get(i),false)*StableDistribution[i];
+            score += scoreFight;
+        }
+        return score;
+    }
+
+    public static void printTable(double[][] twoDm,int precision){
         for(double[] row : twoDm) {
             for (double i : row) {
-                System.out.print(i);
+                int multiplier = (int) Math.pow(10,precision);
+                String value = Double.toString(Math.floor(i*multiplier )/multiplier );
+                System.out.print(value );
+
+                for(int b = value.length(); b<10;b++){
+                    System.out.print("#");
+                }
+
                 System.out.print("\t");
             }
             System.out.println();

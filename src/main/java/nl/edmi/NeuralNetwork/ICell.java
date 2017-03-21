@@ -7,4 +7,5 @@ public interface ICell {
     BetAnswer FirstMove(double random);
     BetAnswer SecondMove(double random,double hand,double inzet,double verlies);
     BetAnswer ThirdMove(double random,double hand,double inzet,double verlies);
+    ICell Clone();
 }
